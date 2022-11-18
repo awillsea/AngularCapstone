@@ -10,14 +10,18 @@ export class FavortiesListComponent implements OnInit {
   FavList:Favorites[]=[];
   constructor(private favSrv:FavoritesService) { }
   ngOnInit(): void {
+    this.refresh();
   }
+
   refresh(){
     this.favSrv.getAll((result:Favorites[])=>{this.FavList= result})
   }
-deleteOne(id: number){
+
+  deleteOne(id: number){
   this.favSrv.delete( ()=>{this.refresh()},id)
-}
-updateOne(favorite:Favorites){
-  this.favSrv.update(()=>{this.refresh()},favorite)
-}
+  }
+
+  updateOne(favorite:Favorites){
+    this.favSrv.update(()=>{this.refresh()},favorite)
+  }
 }

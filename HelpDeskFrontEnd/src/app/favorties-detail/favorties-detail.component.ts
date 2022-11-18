@@ -10,7 +10,7 @@ export class FavortiesDetailComponent implements OnInit {
   ngOnInit(): void {
   }
   @Input() favorite: Favorites = {
-    favorite_id:0,ticketid:0,personid:0
+    favorite_id:1,ticketid:1,personid:1
    }
    @Output() delete: EventEmitter<number> = new EventEmitter<number>();
    @Output() update: EventEmitter<Favorites> = new EventEmitter<Favorites>();

@@ -9,8 +9,6 @@ export class FavoritesService {
 
   getAll(cb: any) {
 
-    // https://localhost:7147/Employee
-
     this.http.get<Favorites[]>('https://localhost:7121/Favorites').subscribe(cb);
 
 }
