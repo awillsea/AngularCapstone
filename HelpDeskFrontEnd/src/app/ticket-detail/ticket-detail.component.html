@@ -1,1 +1,67 @@
-<p>ticket-detail works!</p>
+<div>
+    <table rules="all">
+        <tbody>
+            <tr>
+                <td>Ticket</td><td>{{ ticket.ticket_id }}</td>
+            </tr>
+            <tr>
+                <td>Requester</td><td>{{ ticket.Requester}</td>
+            </tr>
+            <tr>
+                <td>Details</td><td>{{ ticket.problemdetails}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td><td>{{ ticket.phone}}</td>
+            </tr>
+            <tr>
+                <td>Email</td><td>{{ ticket.email}}</td>
+            </tr>
+            <tr>
+                <td>Resolved:</td><td>{{ ticket.resolved}}</td>
+            </tr>
+            <tr>
+                <td>Resolved By:</td><td>{{ ticket.resolvedby}}</td>
+            </tr>
+            <tr>
+                <td>Notes:</td><td>{{ ticket.resnotes}}</td>
+            </tr>
+            <tr>
+                <td>Favorite</td><td>{{ ticket.isfavorite}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="turnOnEdit()">Edit</button>
+    <button (click)="deleteMe()">Delete</button>
+</div>
+
+<div>
+    <tbody>
+        <tr>
+            <td>Ticket</td><td>{{ ticket.ticket_id }}</td>
+        </tr>
+        <tr>
+            <td>Requester</td><td>{{ ticket.Requester}</td>
+        </tr>
+        <tr>
+            <td>Details</td><td>{{ ticket.problemdetails}}</td>
+        </tr>
+        <tr>
+            <td>Phone</td><td>{{ ticket.phone}}</td>
+        </tr>
+        <tr>
+            <td>Email</td><td>{{ ticket.email}}</td>
+        </tr>
+        <tr>
+            <td>Resolved:</td><td>{{ ticket.resolved}}</td>
+        </tr>
+        <tr>
+            <td>Resolved By:</td><td>{{ ticket.resolvedby}}</td>
+        </tr>
+        <tr>
+            <td>Notes:</td><td>{{ ticket.resnotes}}</td>
+        </tr>
+        <tr>
+            <td>Favorite</td><td>{{ ticket.isfavorite}}</td>
+        </tr>
+    </tbody>
+</div>

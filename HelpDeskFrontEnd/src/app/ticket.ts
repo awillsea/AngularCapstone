@@ -3,6 +3,7 @@ export interface Ticket {
     requester: string, 
     problemdetails: string,
     phone: string,
+    email: string,
     resolved: boolean,
     resolvedby: string,
     resnotes: string,
