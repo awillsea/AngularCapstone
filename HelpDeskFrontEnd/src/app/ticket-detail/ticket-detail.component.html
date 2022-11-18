@@ -45,7 +45,7 @@
             </ng-container>
             <ng-container *ngIf="showMore">
             <tr>
-                <td>Favorite</td><td>{{ ticket.isfavorite}}</td>
+                <td><Button (click)="addToFavorites()">Add To Favorites</Button></td>
             </tr>
         </ng-container>
         </tbody>

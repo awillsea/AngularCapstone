@@ -25,3 +25,19 @@
              (update)="updateOne($event)"></app-ticket-detail>
     </ng-container>
 </div>
+<br><br>
+<button (click)="turnOnAddMode()">Add Ticket</button>
+<div *ngIf="addMode">
+    <!--Ticket:<input type="text" [(ngModel)]="newTicket.ticket_id"> <br>  -->
+    Requester:<input type="text" [(ngModel)]="newTicket.requester"> <br>
+    Details:<input type="text" [(ngModel)]="newTicket.problemdetails"> <br>
+    Phone:<input type="text" [(ngModel)]="newTicket.phone"> <br>
+    Email:<input type="text" [(ngModel)]="newTicket.email"> <br>
+    <!-- Resolved:<input type="checkbox" [(ngModel)]="newTicket.resolved"> <br>
+    Resolved By:<input type="text" [(ngModel)]="newTicket.resolvedby"> <br>
+    Favorite:<input type="checkbox" [(ngModel)]="newTicket.isfavorite"> <br> -->
+ <button (click)="addTicket()">Submit</button>
+ <button (click)="turnOffAddMode()">Cancel</button>
+</div>
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../ticket';
 import { TicketService } from '../ticket.service';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
 	selector: 'app-ticket-list',
@@ -27,4 +28,26 @@ export class TicketListComponent implements OnInit {
 	updateOne(ticket:Ticket){
 		this.ticketSrv.update(()=>{this.refresh()},ticket);
 	}
+
+	addMode:boolean = false;
+	turnOnAddMode(){
+  		this.addMode = true;
+	}
+
+	turnOffAddMode(){
+		  		this.addMode = false;
+			}
+
+
+	newTicket:Ticket ={ ticket_id: 0, requester: '', problemdetails: '', phone: '', email: '', resolved: false, resolvedby: '',
+	resnotes: '', isfavorite: false,};
+
+	addTicket(){
+  		this.ticketSrv.add(()=>{this.refresh()},this.newTicket)
+
+	}
+
+	
+
+
 }

@@ -58,6 +58,10 @@ export class TicketDetailComponent implements OnInit {
   cancel(){
       this.editMode = false;
   }
+  
+  addToFavorites() {
+		
+	}
 
   ngOnInit(): void {
   }
