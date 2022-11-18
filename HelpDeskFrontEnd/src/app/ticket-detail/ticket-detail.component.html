@@ -4,34 +4,56 @@
             <tr>
                 <td>Ticket</td><td>{{ ticket.ticket_id }}</td>
             </tr>
+
             <tr>
                 <td>Requester</td><td>{{ ticket.requester }}</td>
             </tr>
-            <tr>
-                <td>Details</td><td>{{ ticket.problemdetails}}</td>
-            </tr>
-            <tr>
-                <td>Phone</td><td>{{ ticket.phone}}</td>
-            </tr>
+
+            <ng-container *ngIf="showMore">
+                <tr>
+                    <td>Details</td><td>{{ ticket.problemdetails}}</td>
+                </tr>
+            </ng-container>
+
+            <ng-container *ngIf="showMore">
+                <tr>
+                    <td>Phone</td><td>{{ ticket.phone}}</td>
+                </tr>
+            </ng-container>
+
+            <ng-container *ngIf="showMore">
             <tr>
                 <td>Email</td><td>{{ ticket.email}}</td>
             </tr>
+            </ng-container>
+
+            <ng-container *ngIf="showMore">
             <tr>
                 <td>Resolved:</td><td>{{ ticket.resolved}}</td>
             </tr>
+            </ng-container>
+
+            <ng-container *ngIf="showMore">
             <tr>
                 <td>Resolved By:</td><td>{{ ticket.resolvedby}}</td>
             </tr>
+            </ng-container>
+            <ng-container *ngIf="showMore">
             <tr>
                 <td>Notes:</td><td>{{ ticket.resnotes}}</td>
             </tr>
+            </ng-container>
+            <ng-container *ngIf="showMore">
             <tr>
                 <td>Favorite</td><td>{{ ticket.isfavorite}}</td>
             </tr>
+        </ng-container>
         </tbody>
     </table>
-    <button (click)="turnOnEdit()">Edit</button>
-    <button (click)="deleteMe()">Delete</button>
+    <ng-container *ngIf="showMore"><button (click)="turnOnEdit()">Edit</button></ng-container>
+    <ng-container *ngIf="showMore"><button (click)="deleteMe()">Delete</button></ng-container>
+    <ng-container *ngIf="!showMore"><button (click)="details()">Details</button></ng-container>
+    <ng-container *ngIf="showMore"><button (click)="showLess()">Show Less</button></ng-container>
 </div>
 <div *ngIf="editMode">
     <tbody>

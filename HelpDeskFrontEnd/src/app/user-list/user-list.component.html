@@ -1,7 +1,21 @@
+<h2>Select User</h2>
+
 <div>
     <ng-container *ngFor="let user of UserList">
         <app-user-detail [user]="user" 
             (delete)="deleteOne($event)" 
             (update)="updateOne($event)"></app-user-detail>
     </ng-container>
+    </div>
+<br>
+    <button (click)="turnOnAddMode()">Add User</button>
+
+    <div *ngIf="addMode">
+
+        User Name:<input type="text" [(ngModel)]="this.newUser.user_name">
+
+        User Email:<input type="text" [(ngModel)]="this.newUser.user_email">
+
+    <button (click)="addUser()">Save</button>
+
     </div>

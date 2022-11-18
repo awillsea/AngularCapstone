@@ -34,4 +34,10 @@ export class UserDetailComponent implements OnInit {
   cancel(){
       this.editMode = false;
   }
+
+  login() {
+
+  }
+
+  
 }

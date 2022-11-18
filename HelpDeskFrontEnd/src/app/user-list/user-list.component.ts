@@ -21,4 +21,18 @@ deleteOne(id: number){
 updateOne(user:User){
   this.userSrv.update(()=>{this.refresh()},user)
 }
+
+
+addMode:boolean = false;
+turnOnAddMode(){
+  this.addMode = true;
+}
+
+
+
+newUser:User ={user_id:0,user_name:'',user_email:''};
+  addUser(){
+
+    this.userSrv.add(()=>{this.refresh()},this.newUser)
+  }
 }

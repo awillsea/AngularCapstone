@@ -1,3 +1,23 @@
+<h2>Tickets</h2>
+<!-- <ngb-accordion *ngFor="let t of TicketList"  #acc="ngbAccordion" activeIds="ngb-panel-0">
+
+    <ngb-panel [title]="t.ticket_id>
+
+        <ng-template ngbPanelContent>
+
+            <ng-container >
+
+                <app-ticket-detail [ticket]="t" (delete)="deleteOne($event)" (update)="updateOne($event)"></app-ticket-detail>
+
+
+
+            </ng-container>
+
+        </ng-template>
+
+    </ngb-panel>
+
+</ngb-accordion> -->
 <div>
     <ng-container *ngFor="let ticket of TicketList">
         <app-ticket-detail [ticket]="ticket"
