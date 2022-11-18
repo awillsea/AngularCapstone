@@ -1,1 +1,32 @@
-<p>favorties-detail works!</p>
+<div *ngIf="!editMode">
+    <table rules="all">
+        <tbody>
+            <tr>
+                <td>Favorite Id</td><td>{{ favorite.favorite_id }}</td>
+            </tr>
+            <tr>
+                <td>Ticket ID</td><td>{{ favorite.ticketid }}</td>
+            </tr>
+            <tr>
+                <td>Person ID</td><td>{{ favorite.personid }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="turnOnEdit()">Edit</button>
+    <button (click)="deleteMe()">Delete</button>
+</div>
+<div *ngIf="editMode">
+    <tbody>
+        <tr>
+            <td>Favorite ID</td> <td><input type="text" [(ngModel)]="editObj.favorite_id"> </td>
+        </tr>
+        <tr>
+            <td>Ticket ID</td><td> <input type="text" [(ngModel)]="editObj.ticketid"></td>
+        </tr>
+        <tr>
+            <td>Person ID</td><td> <input type="text" [(ngModel)]="editObj.personid"> </td>
+        </tr>
+    </tbody>
+    <button (click)="saveChanges()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>

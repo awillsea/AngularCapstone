@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!editMode">
     <table rules="all">
         <tbody>
             <tr>
@@ -33,35 +33,36 @@
     <button (click)="turnOnEdit()">Edit</button>
     <button (click)="deleteMe()">Delete</button>
 </div>
-
-<div>
+<div *ngIf="editMode">
     <tbody>
         <tr>
-            <td>Ticket</td><td>{{ ticket.ticket_id }}</td>
+            <td>Ticket</td> <td><input type="text" [(ngModel)]="editObj.ticket_id"> </td>
         </tr>
         <tr>
-            <td>Requester</td><td>{{ ticket.Requester}</td>
+            <td>Requester</td><td> <input type="text" [(ngModel)]="editObj.requester"></td>
         </tr>
         <tr>
-            <td>Details</td><td>{{ ticket.problemdetails}}</td>
+            <td>Details</td><td> <input type="text" [(ngModel)]="editObj.problemdetails"> </td>
         </tr>
         <tr>
-            <td>Phone</td><td>{{ ticket.phone}}</td>
+            <td>Phone</td><td> <input type="text" [(ngModel)]="editObj.phone"></td>
         </tr>
         <tr>
-            <td>Email</td><td>{{ ticket.email}}</td>
+            <td>Email</td><td> <input type="text" [(ngModel)]="editObj.email"> </td>
         </tr>
         <tr>
-            <td>Resolved:</td><td>{{ ticket.resolved}}</td>
+            <td>Resolved:</td><td> <input type="checkbox" [(ngModel)]="editObj.resolved"> </td>
         </tr>
         <tr>
-            <td>Resolved By:</td><td>{{ ticket.resolvedby}}</td>
+            <td>Resolved By:</td><td> <input type="text" [(ngModel)]="editObj.resolvedby"> </td>
         </tr>
         <tr>
-            <td>Notes:</td><td>{{ ticket.resnotes}}</td>
+            <td>Notes:</td><td> <input type="text" [(ngModel)]="editObj.resnotes"></td>
         </tr>
         <tr>
-            <td>Favorite</td><td>{{ ticket.isfavorite}}</td>
+            <td>Favorite</td><td> <input type="checkbox" [(ngModel)]="editObj.isfavorite"> </td>
         </tr>
     </tbody>
+    <button (click)="saveChanges()">Save</button>
+    <button (click)="cancel()">Cancel</button>
 </div>

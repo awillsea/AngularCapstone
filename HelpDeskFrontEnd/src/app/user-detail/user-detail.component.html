@@ -1,13 +1,32 @@
-<!-- <div>
-
-    <div>
-
-        User ID:{{user.id}}
-
-        User Name:{{user.Name}}
-
-        User Email:{{user.email}}
-
-    </div>
-
-</div> -->
+<div *ngIf="!editMode">
+    <table rules="all">
+        <tbody>
+            <tr>
+                <td>User ID</td><td>{{ user.user_id }}</td>
+            </tr>
+            <tr>
+                <td>User Name</td><td>{{ user.user_name }}</td>
+            </tr>
+            <tr>
+                <td>User Email</td><td>{{ user.user_email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="turnOnEdit()">Edit</button>
+    <button (click)="deleteMe()">Delete</button>
+</div>
+<div *ngIf="editMode">
+    <tbody>
+        <tr>
+            <td>User ID</td> <td><input type="text" [(ngModel)]="editObj.user_id"> </td>
+        </tr>
+        <tr>
+            <td>User Name</td><td> <input type="text" [(ngModel)]="editObj.user_name"></td>
+        </tr>
+        <tr>
+            <td>User Email</td><td> <input type="text" [(ngModel)]="editObj.user_email"> </td>
+        </tr>
+    </tbody>
+    <button (click)="saveChanges()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>

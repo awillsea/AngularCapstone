@@ -1,1 +1,5 @@
-<p>user-list works!</p>
+<div>
+    <ng-container *ngFor="let user of UserList">
+        <app-ticket-detail [user]="user" (delete)="deleteOne($event)" (update)="updateOne($event)"></app-ticket-detail>
+    </ng-container>
+    </div>

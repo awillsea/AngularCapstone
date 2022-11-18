@@ -1,1 +1,7 @@
-<p>ticket-list works!</p>
+<div>
+    <ng-container *ngFor="let ticket of TicketList">
+        <app-ticket-detail [ticket]="ticket"
+             (delete)="deleteOne($event)" 
+             (update)="updateOne($event)"></app-ticket-detail>
+    </ng-container>
+</div>

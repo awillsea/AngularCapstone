@@ -1,1 +1,5 @@
-<p>favorties-list works!</p>
+<div>
+    <ng-container *ngFor="let fav of FavList">
+        <app-ticket-detail [favorite]="fav" (delete)="deleteOne($event)" (update)="updateOne($event)"></app-ticket-detail>
+    </ng-container>
+    </div>
