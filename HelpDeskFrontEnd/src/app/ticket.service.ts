@@ -38,8 +38,13 @@ delete(cb: any, id: number) {
 update(cb: any, emp: Ticket) {
 
     this.http.put('https://localhost:7121/Ticket', emp).subscribe(cb);
+  }
 
-}
+  getfavorites(cb:any){
+
+    this.http.get<Ticket[]>('https://localhost:7121/Ticket/bookmarks').subscribe(cb);
+  
+  }
 
   constructor(private http: HttpClient) { }
 }

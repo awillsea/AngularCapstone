@@ -1,3 +1,18 @@
-table {
-    border: 2px solid black
+.wrapper {
+    grid: flex;
+    grid-template-columns: auto;
+    grid-column-start: span 2;
+    margin: 30px;
+
 }
+.wrapper>div{
+    border: 2px solid black;
+    margin: 0 auto;
+    flex: 0 0 50px
+}
+ .container {
+    width: 50%;
+    margin: 0;
+    padding-left: 0;
+    
+ }

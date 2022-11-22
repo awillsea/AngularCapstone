@@ -1,55 +1,55 @@
-<div *ngIf="!editMode">
-    <table rules="all">
-        <tbody>
-            <tr>
-                <td>Ticket #</td><td>{{ ticket.ticket_id }}</td>
-            </tr>
+<div class="container">
+<div class="wrapper" *ngIf="!editMode">
+    
+            <div>
+                <b>Ticket #:</b>  {{ ticket.ticket_id }}
+            </div>
 
-            <tr>
-                <td>Requester</td><td>{{ ticket.requester }}</td>
-            </tr>
-
+            <div>
+                <b>Requester:</b>  {{ ticket.requester }}
+            </div>
+            <div>
             <ng-container *ngIf="showMore">
-                <tr>
-                    <td>Details</td><td>{{ ticket.problemdetails}}</td>
-                </tr>
+                
+                    <b>Details:</b> {{ ticket.problemdetails}}
+                
+            </ng-container>
+            </div>
+            <div>
+            <ng-container *ngIf="showMore">
+                
+                    <b>Phone:</b>  {{ ticket.phone}}
+                
+            </ng-container>
+            </div>
+            <ng-container *ngIf="showMore">
+            <div>
+                <b>Email:</b> {{ ticket.email}}
+            </div>
             </ng-container>
 
+            <div>
             <ng-container *ngIf="showMore">
-                <tr>
-                    <td>Phone</td><td>{{ ticket.phone}}</td>
-                </tr>
+                <b>Resolved:</b>  {{ ticket.resolved}}
             </ng-container>
+            </div>
 
+            <div>
             <ng-container *ngIf="showMore">
-            <tr>
-                <td>Email</td><td>{{ ticket.email}}</td>
-            </tr>
+                <b>Resolved By:</b> {{ ticket.resolvedby}}
             </ng-container>
-
+            </div>
+            <div>
             <ng-container *ngIf="showMore">
-            <tr>
-                <td>Resolved:</td><td>{{ ticket.resolved}}</td>
-            </tr>
+                <b>Notes:</b>  {{ ticket.resnotes}}
             </ng-container>
-
+            </div>
+            <div>
             <ng-container *ngIf="showMore">
-            <tr>
-                <td>Resolved By:</td><td>{{ ticket.resolvedby}}</td>
-            </tr>
+                <Button (click)="addToFavorites()">Add To Favorites</Button>
             </ng-container>
-            <ng-container *ngIf="showMore">
-            <tr>
-                <td>Notes:</td><td>{{ ticket.resnotes}}</td>
-            </tr>
-            </ng-container>
-            <ng-container *ngIf="showMore">
-            <tr>
-                <td><Button (click)="addToFavorites()">Add To Favorites</Button></td>
-            </tr>
-        </ng-container>
-        </tbody>
-    </table>
+            </div>
+    
     <ng-container *ngIf="showMore"><button (click)="turnOnEdit()">Edit</button></ng-container>
     <ng-container *ngIf="showMore"><button (click)="deleteMe()">Delete</button></ng-container>
     <ng-container *ngIf="!showMore"><button (click)="details()">Details</button></ng-container>
@@ -57,34 +57,35 @@
 </div>
 <div *ngIf="editMode">
     <tbody>
-        <tr>
-            <td>Ticket</td> <td><input type="text" [(ngModel)]="editObj.ticket_id"> </td>
-        </tr>
-        <tr>
-            <td>Requester</td><td> <input type="text" [(ngModel)]="editObj.requester"></td>
-        </tr>
-        <tr>
-            <td>Details</td><td> <input type="text" [(ngModel)]="editObj.problemdetails"> </td>
-        </tr>
-        <tr>
-            <td>Phone</td><td> <input type="text" [(ngModel)]="editObj.phone"></td>
-        </tr>
-        <tr>
-            <td>Email</td><td> <input type="text" [(ngModel)]="editObj.email"> </td>
-        </tr>
-        <tr>
-            <td>Resolved:</td><td> <input type="checkbox" [(ngModel)]="editObj.resolved"> </td>
-        </tr>
-        <tr>
-            <td>Resolved By:</td><td> <input type="text" [(ngModel)]="editObj.resolvedby"> </td>
-        </tr>
-        <tr>
-            <td>Notes:</td><td> <input type="text" [(ngModel)]="editObj.resnotes"></td>
-        </tr>
-        <tr>
-            <td>Favorite</td><td> <input type="checkbox" [(ngModel)]="editObj.isfavorite"> </td>
-        </tr>
+        <div>
+            Ticket <input type="text" [(ngModel)]="editObj.ticket_id"> 
+        </div>
+        <div>
+            Requester <input type="text" [(ngModel)]="editObj.requester">
+        </div>
+        <div>
+            Details <input type="text" [(ngModel)]="editObj.problemdetails"> 
+        </div>
+        <div>
+            Phone <input type="text" [(ngModel)]="editObj.phone">
+        </div>
+        <div>
+            Email <input type="text" [(ngModel)]="editObj.email"> 
+        </div>
+        <div>
+            Resolved: <input type="checkbox" [(ngModel)]="editObj.resolved"> 
+        </div>
+        <div>
+            Resolved By: <input type="text" [(ngModel)]="editObj.resolvedby"> 
+        </div>
+        <div>
+            Notes: <input type="text" [(ngModel)]="editObj.resnotes">
+        </div>
+        <div>
+            Favorite <input type="checkbox" [(ngModel)]="editObj.isfavorite"> 
+        </div>
     </tbody>
     <button (click)="saveChanges()">Save</button>
     <button (click)="cancel()">Cancel</button>
+</div>
 </div>
