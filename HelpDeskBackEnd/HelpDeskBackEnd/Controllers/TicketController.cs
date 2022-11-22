@@ -30,5 +30,11 @@ namespace HelpDeskBackEnd.Controllers
         {
             DAL.Update(Ticket);
         }
+
+        [HttpGet("bookmarks")]
+        public List<Ticket> GetFavorites()
+        {
+            return DAL.GetAllFavorites();
+        }
     }
 }

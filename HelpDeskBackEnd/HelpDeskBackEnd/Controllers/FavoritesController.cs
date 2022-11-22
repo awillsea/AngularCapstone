@@ -7,11 +7,11 @@ namespace HelpDeskBackEnd.Controllers
     [ApiController]
     public class FavoritesController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<Favorite> GetAll()
-        {
-            return DAL.GetAllFavorites();
-        }
+        //[HttpGet]
+        //public List<Favorite> GetAll()
+        //{
+        //    return DAL.GetAll();
+        //}
 
         [HttpPost]
         public Favorite AddFavorite(Favorite fav)

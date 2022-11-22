@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Favorites } from '../favorites';
 import { Ticket } from '../ticket';
 @Component({
   selector: 'app-ticket-detail',
@@ -20,6 +21,8 @@ export class TicketDetailComponent implements OnInit {
   editMode:boolean = false;
   showMore:boolean = false;
 
+  FavList: Favorites[] = []
+
   details() {
     this.showMore=true;
   }
@@ -31,6 +34,9 @@ export class TicketDetailComponent implements OnInit {
   editObj:Ticket ={
     ticket_id: 0, requester: '', problemdetails: '', phone: '', email: '', resolved: false, resolvedby: '',
     resnotes: '', isfavorite: false,
+  };
+  newFav: Favorites ={
+    favorite_id:0,ticketid:0, personid:0
   };
 
   turnOnEdit(){
@@ -60,7 +66,11 @@ export class TicketDetailComponent implements OnInit {
   }
   
   addToFavorites() {
-		
+    /* this.FavList.push(addFav: Favorites {
+      favorite_id: 0,
+      ticketid: this.ticket.ticket_id,
+      personid: this.ticket.requester;
+    }) */
 	}
 
   ngOnInit(): void {

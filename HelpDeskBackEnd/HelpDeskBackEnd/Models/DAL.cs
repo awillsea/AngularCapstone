@@ -22,9 +22,10 @@ namespace HelpDeskBackEnd
             return DB.GetAll<User>();
         }
 
-        public static IEnumerable<Favorite> GetAllFavorites()  // favorites
+        public static List<Ticket> GetAllFavorites()  // favorites
         {
-            return DB.GetAll<Favorite>();
+            var result = DB.Query<Ticket>("select * from ticket where isfavorite = true").ToList();
+            return result;
         }
 
 
